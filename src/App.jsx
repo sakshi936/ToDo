@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { ToDoProvider } from './context'
-import TodoItem from './components'
+import { ToDoProvider } from './context/index'
+import TodoItem from './components/TodoItem'
 import TodoForm from './components/TodoForm';
 
 function App() {
   const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
+    console.log(todo.todo);
     setTodos((prev) => [{id: Date.now(), ...todo}, ...prev] )
   }
 
